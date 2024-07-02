@@ -1,7 +1,15 @@
 import { type MotionValue, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import { BlogTemplate } from "~/components/Templates/Blog/BlogTemplate";
-import { blogList, paginationList } from "~/data/blog";
+import {
+  Archives,
+  ArchivesImage,
+  Categories,
+  TagList,
+  blogList,
+  blogger,
+  paginationList,
+} from "~/data/blog";
 import { icons } from "~/data/icons";
 import { listTitle } from "~/data/listfact";
 
@@ -81,6 +89,13 @@ export const BlogContainer = () => {
         paginationComponentProps: {
           paginationAtomProps: paginationList,
         },
+      },
+      aboutBlogListComponentProps: {
+        bloggerProfileAtomProps: blogger,
+        listCategoryAtomProps1: Categories,
+        listCategoryAtomProps2: Archives,
+        archivesListAtomProps: ArchivesImage,
+        tagListAtomProps: TagList,
       },
     },
     footerModuleProps: {
