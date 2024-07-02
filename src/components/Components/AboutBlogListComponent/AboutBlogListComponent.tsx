@@ -16,7 +16,7 @@ type Props = {
 
 export const AboutBlogListComponent = (props: Props) => {
   return (
-    <div className='flex w-full flex-col gap-[40px] xl:w-[24%]'>
+    <div className='flex w-full flex-col gap-[40px] lg:w-[27%]'>
       <BloggerProfileAtom {...props.bloggerProfileAtomProps} />
       <div className=' w-full'>
         <h2 className='text-[30px] font-bold text-white'>Search</h2>
