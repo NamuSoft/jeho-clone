@@ -2,6 +2,7 @@ import { type MotionValue, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import { PortfolioTemplate } from "~/components/Templates/Portfolio/PortfolioTemplate";
 import { icons } from "~/data/icons";
+import { listTitle } from "~/data/listfact";
 import { portfolioListContent, portfolioListTag } from "~/data/portfolioList";
 
 export const PortfolioContainer = () => {
@@ -11,6 +12,7 @@ export const PortfolioContainer = () => {
   const [activeNavbar, setActiveNavbar] = useState(false);
   const [activeDrawer, setActiveDrawer] = useState(false);
   const [activeTag, setActiveTag] = useState("All");
+  const [itemsToShow, setItemsToShow] = useState(7);
 
   const handleToggle = () => {
     setActiveNavbar(!activeNavbar);
@@ -29,6 +31,9 @@ export const PortfolioContainer = () => {
       setIsBlack(false);
     }
   };
+  const handleLoadMore = () => {
+    setItemsToShow(itemsToShow + 3);
+  };
   useEffect(() => {
     window.addEventListener("scroll", toggleVisible);
   }, []);
@@ -45,12 +50,19 @@ export const PortfolioContainer = () => {
   const portfolioTemplateProps: React.ComponentProps<typeof PortfolioTemplate> =
     {
       portfolioOurPortfolioWorkModuleProps: {
-        portfolioContent: portfolioListContent,
+        portfolioGridComponentsProps: {
+          portfolioContent: portfolioListContent,
+          activeTag,
+          itemsToShow,
+        },
+        handleLoadMore,
+        itemsToShow,
         portfolioTagsComponentsProps: {
           tags: portfolioListTag,
           setActiveTag,
           activeTag,
         },
+        activeTag,
         leftContainerComponentProps: {
           subTitle: "Our Portfolio",
           title: "Some recent work",
@@ -58,6 +70,8 @@ export const PortfolioContainer = () => {
       },
       footerModuleProps: {
         isDiscussion: false,
+        listTitleComponentProps: listTitle,
+        info: "Welcome to arino sed ut perspiciae omunde omnis iste natus error sitort voluptatem accusantium.",
         DiscussionComponent: {
           title: "",
         },

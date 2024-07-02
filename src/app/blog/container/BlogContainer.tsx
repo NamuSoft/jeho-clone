@@ -1,11 +1,10 @@
 import { type MotionValue, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
-import { AboutTemplate } from "~/components/Templates/About/AboutTemplate";
-import { aboutOurAgency } from "~/data/agency";
+import { BlogTemplate } from "~/components/Templates/Blog/BlogTemplate";
 import { icons } from "~/data/icons";
 import { listTitle } from "~/data/listfact";
 
-export const AboutContainer = () => {
+export const BlogContainer = () => {
   const cursorX: MotionValue<number> = useMotionValue(-100);
   const cursorY: MotionValue<number> = useMotionValue(-100);
   const [isBlack, setIsBlack] = useState(false);
@@ -42,16 +41,15 @@ export const AboutContainer = () => {
       window.removeEventListener("mousemove", mouseCursor);
     };
   }, [cursorX, cursorY]);
-
-  const aboutTemplateProps: React.ComponentProps<typeof AboutTemplate> = {
+  const blogTemplateProps: React.ComponentProps<typeof BlogTemplate> = {
     headerModuleProps: {
       headerComponentProps: {
-        bgImage: "bg-hero-other",
+        bgImage: "bg-blog-bg",
         headerAtomProps: {
-          currentPage: "About us",
+          currentPage: "Blog",
           prevLink: "/",
           prevText: "Home",
-          title: "About Us",
+          title: "Our Blog",
         },
       },
       drawerComponentProps: {
@@ -76,26 +74,19 @@ export const AboutContainer = () => {
         },
       },
     },
-    aboutOurAgencyModuleProps: {
-      data: aboutOurAgency.data,
-      text: aboutOurAgency.text,
-      title: aboutOurAgency.title,
-      subTitle: aboutOurAgency.title,
-    },
-    whyChooseUsModuleProps: {},
-    ourTeamModuleProps: {},
+    blogListAreaModuleProps: { title: "BlogListAreaModule" },
     footerModuleProps: {
-      listTitleComponentProps: listTitle,
-      info: "Welcome to arino sed ut perspiciae omunde omnis iste natus error sitort voluptatem accusantium.",
-      socialComponents: {
-        icon: icons,
-      },
-      isDiscussion: true,
       DiscussionComponent: {
         title: "Let’s disscuse make something cool together",
       },
+      info: "Welcome to arino sed ut perspiciae omunde omnis iste natus error sitort voluptatem accusantium.",
+      isDiscussion: true,
+      socialComponents: {
+        icon: icons,
+      },
+      listTitleComponentProps: listTitle,
     },
   };
 
-  return <AboutTemplate {...aboutTemplateProps} />;
+  return <BlogTemplate {...blogTemplateProps} />;
 };

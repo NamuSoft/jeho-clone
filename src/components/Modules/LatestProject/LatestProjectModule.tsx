@@ -7,6 +7,8 @@ import SliderCarouselComponent from "~/components/Components/SliderCarouselCompo
 import { latestItem } from "~/data/latestItem";
 import "./custom.css";
 type Props = {
+  title: string;
+  subTitle: string;
   // Add props here
 };
 
@@ -48,8 +50,8 @@ export const LatestProjectModule = (props: Props) => {
       <section className='px-[.75rem]'>
         <div className='container mx-auto'>
           <LeftContainerComponent
-            subTitle='Latest Projects'
-            title='Portfolio to explore'
+            subTitle={props.subTitle}
+            title={props.title}
             className='flex flex-col items-center'
           />
           <DividerComponent className='h-[45px] lg:h-[90px]' />

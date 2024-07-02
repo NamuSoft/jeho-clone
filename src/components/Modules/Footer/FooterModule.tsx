@@ -2,13 +2,18 @@ import Link from "next/link";
 import React from "react";
 import SVGAtom from "~/components/Atoms/SVGAtom/SVGAtom";
 import DiscussionComponent from "~/components/Components/DiscussionComponent/DiscussionComponent";
+import { ListTitleComponent } from "~/components/Components/ListTitleComponent/ListTitleComponent";
 import { SocialIconComponent } from "~/components/Components/SocialIconComponent/SocialIconComponent";
 import SubscribeComponent from "~/components/Components/SubscribeComponent/SubscribeComponent";
 
 type Props = {
   socialComponents: React.ComponentProps<typeof SocialIconComponent>;
   DiscussionComponent: React.ComponentProps<typeof DiscussionComponent>;
+  listTitleComponentProps: Array<
+    React.ComponentProps<typeof ListTitleComponent>
+  >;
   isDiscussion: boolean;
+  info: string;
   // Add props here
 };
 
@@ -18,7 +23,7 @@ export const FooterModule = (props: Props) => {
       {props.isDiscussion && (
         <DiscussionComponent {...props.DiscussionComponent} />
       )}
-      <footer className='container mx-auto w-full px-[.7rem] text-accentGrey lg:p-0'>
+      <footer className='container mx-auto w-full px-[.7rem] text-accentGrey'>
         <div className='pb-[65px] pt-[95px]'>
           <div className='container'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
@@ -29,50 +34,17 @@ export const FooterModule = (props: Props) => {
                   width={89}
                   height={30}
                 />
-                <p className='text-[18px]'>
-                  Welcome to arino sed ut perspiciae omunde omnis iste natus
-                  error sitort voluptatem accusantium.
-                </p>
+                <p className='text-[18px]'>{props.info}</p>
                 <SocialIconComponent
                   className='mt-[30px]'
                   {...props.socialComponents}
                 />
               </div>
-              <div className='ml-0 mt-[30px] sm:mt-0 lg:ml-[30px]'>
-                <p className='text-[16px] font-semibold text-white lg:text-[18px]'>
-                  Services
-                </p>
-                <ul className='mt-[15px] flex flex-col gap-[15px]'>
-                  <li className='max-w-[70%] text-[16px] lg:text-[18px]'>
-                    <Link href={"#"}> UI/UX design</Link>
-                  </li>
-                  <li className='max-w-[70%] text-[16px] lg:text-[18px]'>
-                    <Link href={"#"}>WP development</Link>
-                  </li>
-                  <li className='max-w-[70%] text-[16px] lg:text-[18px]'>
-                    <Link href={"#"}>Digital marketing</Link>
-                  </li>
-                  <li className='max-w-[70%] text-[16px] lg:text-[18px]'>
-                    <Link href={"#"}>React development</Link>
-                  </li>
-                </ul>
-              </div>
-              <div className='mt-[30px] sm:mt-0'>
-                <p className='text-[16px] font-semibold text-white lg:text-[18px]'>
-                  Contact Us
-                </p>
-                <ul className='mt-[15px] flex flex-col gap-[15px]'>
-                  <li className='max-w-[70%] text-[16px] lg:text-[18px]'>
-                    +44 454 7800 112
-                  </li>
-                  <li className='max-w-[70%] text-[16px] lg:text-[18px]'>
-                    infotech@arino.com
-                  </li>
-                  <li className='max-w-[70%] text-[16px] lg:text-[18px]'>
-                    50 Wall Street Suite, 44150 Ohio, United States
-                  </li>
-                </ul>
-              </div>
+
+              {props.listTitleComponentProps.map((list, index) => (
+                <ListTitleComponent {...list} key={index} />
+              ))}
+
               <SubscribeComponent />
             </div>
           </div>

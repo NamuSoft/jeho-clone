@@ -1,19 +1,16 @@
-import { PortfolioOurPortfolioWorkModule } from "~/components/Modules/Portfolio/PortfolioOurPortfolioWorkModule";
+import { BlogListAreaModule } from "~/components/Modules/Blog/BlogListAreaModule";
 import { Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import { FooterModule } from "~/components/Modules/Footer/FooterModule";
 import { HeaderModule } from "~/components/Modules/Header/HeaderModule";
-import { AgencyModule } from "~/components/Modules/Agency/AgencyModule";
 
 type Props = {
-  portfolioOurPortfolioWorkModuleProps: React.ComponentProps<
-    typeof PortfolioOurPortfolioWorkModule
-  >;
+  blogListAreaModuleProps: React.ComponentProps<typeof BlogListAreaModule>;
   footerModuleProps: React.ComponentProps<typeof FooterModule>;
   headerModuleProps: React.ComponentProps<typeof HeaderModule>;
 };
 
-export const PortfolioTemplate = (props: Props) => {
+export const BlogTemplate = (props: Props) => {
   return (
     <Layout
       style={{
@@ -26,9 +23,7 @@ export const PortfolioTemplate = (props: Props) => {
       <HeaderModule {...props.headerModuleProps} />
 
       <Content style={{ overflow: "auto" }}>
-        <PortfolioOurPortfolioWorkModule
-          {...props.portfolioOurPortfolioWorkModuleProps}
-        />
+        <BlogListAreaModule {...props.blogListAreaModuleProps} />
       </Content>
 
       <Footer
@@ -38,9 +33,7 @@ export const PortfolioTemplate = (props: Props) => {
           color: "white",
           padding: 0,
         }}
-        className='mt-[8rem] md:px-[1.2rem]'
       >
-        <AgencyModule />
         <FooterModule {...props.footerModuleProps} />
       </Footer>
     </Layout>
