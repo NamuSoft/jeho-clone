@@ -21,15 +21,15 @@ export const NavListComponents = (props: Props) => {
   };
   return (
     <div
-      className={`absolute z-50 overflow-hidden transition-all duration-500 ease-linear xl:left-[50%] xl:top-[50%] xl:overflow-auto ${activeNavbar ? "top-[100px] max-h-[600px]" : "top-[100px] max-h-0"} w-full items-center justify-center text-white xl:flex xl:max-h-20 xl:-translate-x-[50%] xl:-translate-y-[50%]`}
+      className={`absolute overflow-hidden transition-all duration-500 ease-linear xl:left-[50%] xl:top-[50%] xl:overflow-visible  ${activeNavbar ? "top-[100px] max-h-[600px]" : "top-[100px] h-0"} w-full items-center justify-center text-white xl:flex xl:max-h-20 xl:-translate-x-[50%] xl:-translate-y-[50%]`}
     >
       <ul
-        className={`flex max-h-[900px] flex-col gap-[45px] border-y bg-primaryColor py-[30px] xl:border-none xl:bg-transparent ${activeNavbar ? "w-full flex-col" : ""} xl:flex-row`}
+        className={`flex max-h-full flex-col gap-[45px] border-y bg-primaryColor py-[30px] xl:border-none xl:bg-transparent ${activeNavbar ? "w-full flex-col" : ""} xl:flex-row`}
       >
         {navLinks.map((link, index) => (
           <li
             key={index}
-            className='group relative overflow-hidden px-[20px] uppercase transition-all duration-500 ease-linear xl:overflow-auto xl:p-0 '
+            className='group relative px-[20px] uppercase transition-all duration-500 ease-linear xl:overflow-visible xl:p-0 '
             onMouseEnter={() => handleMouseEnter(index)}
           >
             <div className='flex items-center justify-between'>
@@ -58,7 +58,8 @@ export const NavListComponents = (props: Props) => {
               <ul
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
-                className={`transition-all duration-500 ease-in xl:border-t-2 ${mobileNav === index ? "flex h-full max-h-[600px] min-h-[100px] overflow-hidden bg-transparent" : "max-h-0"} absolute left-0 top-[30px] w-full flex-col gap-[20px] p-0 px-[10px] xl:absolute xl:max-h-[600px] xl:w-[280px] xl:rounded-b-[7px] xl:border-t-accentRed xl:py-[20px]  ${visibleIndex === index ? "xl:flex xl:bg-[#181818]" : "xl:hidden"}`}
+                // className={`absolute left-0 top-[40px] block max-h-[600px] w-full bg-[#181818] xl:w-[280px]`}
+                className={`flex overflow-hidden transition-all duration-500 ease-in xl:hidden xl:border-t-2 ${mobileNav === index ? "h-full max-h-[600px] bg-transparent" : "max-h-0"} z-50 w-full flex-col gap-[20px] p-0 px-[10px] group-hover:flex xl:absolute xl:left-0 xl:top-[30px] xl:max-h-[600px] xl:w-[280px] xl:rounded-b-[7px] xl:border-t-accentRed xl:bg-[#181818] xl:py-[20px]`}
               >
                 {link.children?.map((item, index) => (
                   <li key={index} className='text-[17px]'>

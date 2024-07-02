@@ -15,7 +15,7 @@ export const BlogListAreaModule = (props: Props) => {
     <section className='px-[.75rem]'>
       <div className='container mx-auto w-full'>
         <DividerComponent className='h-[80px] lg:h-[145px]' />
-        <div className='flex flex-col gap-[50px] xl:flex-row xl:justify-between'>
+        <div className='flex flex-col gap-[50px] lg:flex-row lg:justify-between'>
           <BlogListComponent {...props.blogListComponent} />
           <AboutBlogListComponent {...props.aboutBlogListComponentProps} />
         </div>

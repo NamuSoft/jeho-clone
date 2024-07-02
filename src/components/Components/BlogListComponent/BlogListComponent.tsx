@@ -11,7 +11,7 @@ type Props = {
 
 export const BlogListComponent = (props: Props) => {
   return (
-    <div className='flex w-full flex-col gap-[50px] xl:w-[68%]'>
+    <div className='flex w-full flex-col gap-[50px] lg:w-[68%]'>
       {props.blogLists.map((blogList, index) => (
         <BlogListContentAtom key={index} {...blogList} />
       ))}
