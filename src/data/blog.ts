@@ -32,3 +32,68 @@ export const paginationList = [
   { content: 4 },
   { content: 5 },
 ];
+
+export const blogger = {
+  name: "Kuber Jontra",
+  content:
+    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.",
+  url: "/images/avatar_1.png",
+};
+
+export const Categories = {
+  title: "Categories",
+  links: [
+    { text: "Corporate" },
+    { text: "Company" },
+    { text: "Search Engine" },
+    { text: "Information" },
+    { text: "Painting" },
+  ],
+};
+export const ArchivesImage = {
+  title: "Archives",
+  listArchives: [
+    {
+      url: "/images/recent_post_1.jpeg",
+      title: "How to studio setup...",
+      date: "15 Aug 2022",
+    },
+    {
+      url: "/images/recent_post_2.jpeg",
+      title: "Creative people mind...",
+      date: "14 Aug 2022",
+    },
+    {
+      url: "/images/recent_post_3.jpeg",
+      title: "AI take over human...",
+      date: "13 Aug 2022",
+    },
+    {
+      url: "/images/recent_post_4.jpeg",
+      title: "You should now add...",
+      date: "12 Aug 2022",
+    },
+  ],
+};
+export const Archives = {
+  title: "Archives",
+  links: [
+    { text: "Archives" },
+    { text: "15 Aug 2022" },
+    { text: "20 Sep 2021" },
+    { text: "11 Dec 2020" },
+    { text: "25 jun 2020" },
+  ],
+};
+export const TagList = {
+  title: "Tags",
+  links: [
+    { text: "Business" },
+    { text: "Agency" },
+    { text: "Artwork" },
+    { text: "Marketing" },
+    { text: "Information" },
+    { text: "Design" },
+    { text: "Wordpress" },
+  ],
+};
