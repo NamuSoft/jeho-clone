@@ -1,7 +1,21 @@
+import { RightOutlined } from "@ant-design/icons";
+import Link from "next/link";
+import { BlogListContentAtom } from "~/components/Atoms/BlogListContentAtom/BlogListContentAtom";
+import { PaginationComponent } from "../PaginationComponent/PaginationComponent";
+
 type Props = {
-      // Add props here
-    };
+  blogLists: Array<React.ComponentProps<typeof BlogListContentAtom>>;
+  paginationComponentProps: React.ComponentProps<typeof PaginationComponent>;
+  // Add props here
+};
 
 export const BlogListComponent = (props: Props) => {
-  return (<div>BlogListComponent</div>);
+  return (
+    <div className='flex w-full flex-col gap-[50px] xl:w-[68%]'>
+      {props.blogLists.map((blogList, index) => (
+        <BlogListContentAtom key={index} {...blogList} />
+      ))}
+      <PaginationComponent {...props.paginationComponentProps} />
+    </div>
+  );
 };
