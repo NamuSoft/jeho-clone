@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { HomeTemplate } from "~/components/Templates/Home/HomeTemplate";
 import { icons } from "~/data/icons";
 import { listcard } from "~/data/listcard";
+import { listTitle } from "~/data/listfact";
+import { followUsLink } from "~/data/navLinks";
+import { postlist } from "~/data/postlist";
 import { testimonialList } from "~/data/testimonialList";
 
 export const HomeContainer = () => {
@@ -50,6 +53,7 @@ export const HomeContainer = () => {
       },
     },
     homeHeaderModuleProps: {
+      homeHeaderComponentProps: followUsLink,
       drawerComponentProps: {
         activeDrawer,
         handleDrawer,
@@ -76,16 +80,32 @@ export const HomeContainer = () => {
       socialComponents: {
         icon: icons,
       },
+      info: "Welcome to arino sed ut perspiciae omunde omnis iste natus error sitort voluptatem accusantium.",
+      listTitleComponentProps: listTitle,
       isDiscussion: true,
       DiscussionComponent: {
         title: "Let’s disscuse make something cool together",
       },
     },
-    homeBlogModuleProps: {},
-    latestProjectModuleProps: {},
+    homeBlogModuleProps: {
+      leftContainerComponentProps: {
+        subTitle: "Our Blog",
+        title: "Explore recent publication",
+        link: "View More Blog",
+      },
+      homeBlogAtomProps: postlist,
+    },
+    latestProjectModuleProps: {
+      subTitle: "Latest Projects",
+      title: "Portfolio to explore",
+    },
     ourAwardModuleProps: {},
     ourTeamModuleProps: {},
-    parnterModuleProps: {},
+    parnterModuleProps: {
+      scrollTextComponentsProps: {
+        title: "Our reputed world wide partners",
+      },
+    },
     testimonialModuleProps: {
       testimonialList: testimonialList,
     },

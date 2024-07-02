@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { ServiceTemplate } from "~/components/Templates/Service/ServiceTemplate";
 import { icons } from "~/data/icons";
 import { listcard } from "~/data/listcard";
+import { listTitle } from "~/data/listfact";
 import { packagelist } from "~/data/packagelist";
 import { testimonialList } from "~/data/testimonialList";
 
@@ -96,6 +97,8 @@ export const ServiceContainer = () => {
       },
     },
     footerModuleProps: {
+      listTitleComponentProps: listTitle,
+      info: "Welcome to arino sed ut perspiciae omunde omnis iste natus error sitort voluptatem accusantium.",
       socialComponents: {
         icon: icons,
       },

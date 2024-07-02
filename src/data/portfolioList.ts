@@ -39,4 +39,16 @@ export const portfolioListContent: portfolioListContentprops[] = [
     url: "/images/portfolio_10.jpeg",
     tag: "Logo Design",
   },
+  {
+    url: "/images/portfolio_4.jpeg",
+    tag: "UI/UX Design",
+  },
+  {
+    url: "/images/portfolio_5.jpeg",
+    tag: "Logo Design",
+  },
+  {
+    url: "/images/portfolio_6.jpeg",
+    tag: "Web Design",
+  },
 ];

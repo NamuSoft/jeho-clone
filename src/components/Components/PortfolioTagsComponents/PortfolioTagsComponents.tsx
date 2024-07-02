@@ -8,7 +8,7 @@ type Props = {
 export const PortfolioTagsComponents = (props: Props) => {
   const { tags, setActiveTag, activeTag } = props;
   return (
-    <div className='mb-[10px] flex items-center gap-[13px] border-b border-b-[#999696] pb-[10px]'>
+    <div className='mb-[10px] flex flex-wrap items-center gap-[13px] border-b border-b-[#999696] pb-[10px]'>
       {tags.map((tag, index) => (
         <button
           onClick={() => setActiveTag(tag)}

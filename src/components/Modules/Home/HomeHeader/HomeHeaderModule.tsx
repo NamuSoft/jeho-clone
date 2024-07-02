@@ -5,11 +5,15 @@ import { NavbarComponent } from "~/components/Components/NavbarComponent/NavbarC
 import "./custom.css";
 import { FunFactComponent } from "~/components/Components/FunFactComponent/FunFactComponent";
 import { DrawerComponent } from "~/components/Components/DrawerComponent/DrawerComponent";
+import { HomeHeaderComponent } from "~/components/Components/HomeHeaderComponent/HomeHeaderComponent";
 type Props = {
   // Add props here
   navbarComponentProps: React.ComponentProps<typeof NavbarComponent>;
   mouseCursorComponentProps: React.ComponentProps<typeof MouseCursorComponent>;
   drawerComponentProps: React.ComponentProps<typeof DrawerComponent>;
+  homeHeaderComponentProps: Array<
+    React.ComponentProps<typeof HomeHeaderComponent>
+  >;
 };
 
 export const HomeHeaderModule = (props: Props) => {
@@ -39,21 +43,9 @@ export const HomeHeaderModule = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className='absolute -right-[78px] top-[35%] z-40 hidden translate-y-[85%] -rotate-90 items-center gap-[12px] text-[17px] text-white xl:flex'>
-          <div className='flex items-center gap-[10px]'>
-            <p className=''>Follow Us</p>
-            <hr className='w-[20px]' />
-          </div>
-          <ul className='flex items-center gap-[16px]'>
-            <li>
-              <Link href={"#"}>Behance</Link>
-            </li>
-            <p>|</p>
-            <li>
-              <Link href={"#"}>Twitter</Link>
-            </li>
-          </ul>
-        </div>
+        {props.homeHeaderComponentProps.map((follow, index) => (
+          <HomeHeaderComponent key={index} {...follow} />
+        ))}
         <Link
           href={"#"}
           className='motion-link absolute bottom-[30%] left-[50%] z-10 -ml-[10px] h-[35px] w-[20px] rounded-[10px] border-2 text-white transition-all duration-300 ease-in'

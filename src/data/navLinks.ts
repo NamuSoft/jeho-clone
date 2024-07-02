@@ -88,11 +88,11 @@ export const navLinks = [
     ],
   },
   {
-    link: "/",
+    link: "/blog",
     label: "Blog",
     children: [
       {
-        link: "/",
+        link: "/blog",
         label: "Blog",
       },
       {
@@ -124,6 +124,20 @@ export const navLinks = [
       {
         link: "/",
         label: "FAQ",
+      },
+    ],
+  },
+];
+
+export const followUsLink = [
+  {
+    title: "Follow Us",
+    lists: [
+      {
+        link: "Behance",
+      },
+      {
+        link: "Twitter",
       },
     ],
   },

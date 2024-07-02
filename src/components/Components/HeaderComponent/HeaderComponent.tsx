@@ -1,4 +1,4 @@
-import { HeaderAtom } from "../HeaderAtom/HeaderAtom";
+import { HeaderAtom } from "../../Atoms/HeaderAtom/HeaderAtom";
 import "./custom.css";
 type Props = {
   headerAtomProps: React.ComponentProps<typeof HeaderAtom>;
