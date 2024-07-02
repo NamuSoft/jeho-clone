@@ -1,5 +1,3 @@
-import LinkArrow from "~/components/Components/LinkArrow/LinkArrow";
-
 type Props = {
   // Add props here
 };
@@ -7,7 +5,7 @@ type Props = {
 export const AgencyModule = (props: Props) => {
   return (
     <div className='mx-auto w-full'>
-      <div className='relative z-20 flex h-[200px]  w-full flex-col items-center justify-center gap-[30px] bg-linear-gradient px-[30px] py-[40px] md:px-[50px] xl:flex-row xl:px-[80px] xl:py-[70px]'>
+      <div className='relative z-20 flex h-[200px] w-full flex-col items-center justify-center gap-[30px] bg-linear-gradient px-[30px] py-[40px] md:px-[50px] xl:flex-row xl:px-[80px] xl:py-[70px]'>
         <div className='cs-shape_1'></div>
         <div className='cs-shape_1'></div>
         <div className='cs-shape_1'></div>
