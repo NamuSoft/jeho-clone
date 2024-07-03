@@ -106,7 +106,7 @@ export const navLinks = [
     label: "Pages",
     children: [
       {
-        link: "/",
+        link: "/contact",
         label: "Contact",
       },
       {
