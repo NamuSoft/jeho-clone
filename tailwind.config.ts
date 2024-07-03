@@ -21,6 +21,7 @@ export default {
         "other-bg": "url(/images/service_hero_bg.jpeg)",
         "portfolio-bg": "url(/images/portfolio_hero_bg.jpeg)",
         "blog-bg": "url(/images/blog_hero_bg.jpeg)",
+        "contact-bg": "url(/images/contact_hero_bg.jpeg)",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
